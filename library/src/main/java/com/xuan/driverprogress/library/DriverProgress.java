@@ -1,16 +1,16 @@
-package com.xuan.video.driverprogress;
+package com.xuan.driverprogress.library;
 
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
+import android.os.Build;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 
 
@@ -65,29 +65,27 @@ public class DriverProgress extends View{
         for (int i = 0; i < n; i++)
         {
             int attr = a.getIndex(i);
-            switch (attr)
-            {
-                case R.styleable.DriverProgress_panel_radius:
-                    PANEL_RADIUS = a.getDimensionPixelSize(attr, DensityUtils.dp2px(getContext(),PANEL_RADIUS_DEFALUT));
-                    break;
-                case R.styleable.DriverProgress_panel_width:
-                    PANEL_WIDTH = a.getDimensionPixelSize(attr, DensityUtils.dp2px(getContext(),PANEL_WIDTH_DEFAULT));
-                    break;
-                case R.styleable.DriverProgress_panel_density:
-                    PANEL_DENSITY = a.getInt(attr,PANEL_DENSITY_DEFAULT);
-                    break;
-                case R.styleable.DriverProgress_panel_point_radius:
-                    PANEL_POINT_RADIUS = a.getDimensionPixelSize(attr,DensityUtils.dp2px(getContext(),PANEL_POINT_RADIUS_DEFAULT));
-                    break;
-                case R.styleable.DriverProgress_panel_progress:
-                    PANEL_PROGRESS = a.getInt(attr,PANEL_PROGRESS_DEFAULT);
-                    break;
-                case R.styleable.DriverProgress_panel_max:
-                    PANEL_MAX = a.getInt(attr,PANEL_MAX_DEFAULT);
-                    break;
-                case R.styleable.DriverProgress_indicator_radius:
-                    INDICATOR_RADIUS = a.getDimensionPixelOffset(attr,DensityUtils.dp2px(getContext(),INDICATOR_RADIUS_DEFAULT));
-                    break;
+            if (attr == R.styleable.DriverProgress_panel_radius) {
+                PANEL_RADIUS = a.getDimensionPixelSize(attr, DensityUtils.dp2px(getContext(), PANEL_RADIUS_DEFALUT));
+
+            } else if (attr == R.styleable.DriverProgress_panel_width) {
+                PANEL_WIDTH = a.getDimensionPixelSize(attr, DensityUtils.dp2px(getContext(), PANEL_WIDTH_DEFAULT));
+
+            } else if (attr == R.styleable.DriverProgress_panel_density) {
+                PANEL_DENSITY = a.getInt(attr, PANEL_DENSITY_DEFAULT);
+
+            } else if (attr == R.styleable.DriverProgress_panel_point_radius) {
+                PANEL_POINT_RADIUS = a.getDimensionPixelSize(attr, DensityUtils.dp2px(getContext(), PANEL_POINT_RADIUS_DEFAULT));
+
+            } else if (attr == R.styleable.DriverProgress_panel_progress) {
+                PANEL_PROGRESS = a.getInt(attr, PANEL_PROGRESS_DEFAULT);
+
+            } else if (attr == R.styleable.DriverProgress_panel_max) {
+                PANEL_MAX = a.getInt(attr, PANEL_MAX_DEFAULT);
+
+            } else if (attr == R.styleable.DriverProgress_indicator_radius) {
+                INDICATOR_RADIUS = a.getDimensionPixelOffset(attr, DensityUtils.dp2px(getContext(), INDICATOR_RADIUS_DEFAULT));
+
             }
 
         }
@@ -242,6 +240,7 @@ public class DriverProgress extends View{
     /**
      * 启动动画
      */
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void startAnimation(){
         ValueAnimator animator = ValueAnimator.ofFloat(0,PANEL_PROGRESS);
         animator.setDuration(3000);

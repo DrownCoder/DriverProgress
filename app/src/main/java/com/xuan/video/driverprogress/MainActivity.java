@@ -1,12 +1,14 @@
 package com.xuan.video.driverprogress;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 
-public class MainActivity extends AppCompatActivity {
+import com.xuan.driverprogress.library.DriverProgress;
+
+public class MainActivity extends Activity {
     private DriverProgress myview;
 
     private SeekBar seekBar;

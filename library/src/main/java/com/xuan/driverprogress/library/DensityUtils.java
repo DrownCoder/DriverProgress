@@ -1,4 +1,4 @@
-package com.xuan.video.driverprogress;
+package com.xuan.driverprogress.library;
 
 import android.content.Context;
 import android.util.TypedValue;
