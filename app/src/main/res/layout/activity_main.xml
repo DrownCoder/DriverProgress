@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <com.xuan.video.driverprogress.DriverProgress
+        android:layout_centerInParent="true"
+        android:id="@+id/myview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:panel_radius="75dp"
+        custom:panel_width="45dp"
+        custom:panel_progress="45"
+        custom:panel_max="100"
+        custom:indicator_radius="10dp"
+        custom:panel_point_radius="3dp"
+        custom:panel_density="10"
+        />
+    <Button
+        android:id="@+id/button"
+        android:text="开始动画"
+        android:background="@color/panel_progress_blue"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <SeekBar
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:id="@+id/seekbar"
+        android:layout_marginBottom="50dp"
+        />
+</RelativeLayout>
