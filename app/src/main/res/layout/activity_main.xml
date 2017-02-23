@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.xuan.driverprogress.library.DriverProgress
+    <com.xuan.driverprogress.view.DriverProgress
         android:layout_centerInParent="true"
         android:id="@+id/myview"
         android:layout_width="wrap_content"

@@ -1,4 +1,4 @@
-package com.xuan.driverprogress.library;
+package com.xuan.driverprogress.view;
 
 import org.junit.Test;
 

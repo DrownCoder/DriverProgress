@@ -1,4 +1,4 @@
-package com.xuan.driverprogress.library;
+package com.xuan.driverprogress.view;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
