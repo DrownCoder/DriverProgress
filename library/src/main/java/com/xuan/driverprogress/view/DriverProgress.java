@@ -10,6 +10,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
@@ -57,6 +58,33 @@ public class DriverProgress extends View{
         this.context = context;
         this.paint = new Paint();
         initAttr(attrs,defStyleAttr);
+        initEvent();
+    }
+
+    private void initEvent() {
+        setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //圆心
+                float ix = PANEL_RADIUS + PANEL_WIDTH * 0.75f;
+                float iy = PANEL_RADIUS + PANEL_WIDTH * 0.75f - PANEL_POINT_RADIUS;
+                float x = event.getX();
+                float y = event.getY();
+
+                float yh = iy - y;//角对边
+                float progress = 0;
+                //sin
+                float sin = yh / (PANEL_RADIUS + PANEL_WIDTH); //sin = 角对边 / 半径
+                if(x < ix){//度数<90 Math.asin 反三角函数
+                    progress = (float) ((float) Math.asin(sin) * 2 / Math.PI * PANEL_MAX);
+                }else{ //度数>90
+                    progress = (float) (PANEL_MAX - (float) Math.asin(sin) * 2 / Math.PI * PANEL_MAX);
+                }
+
+                setProgress(progress);
+                return true;
+            }
+        });
     }
 
     private void initAttr(AttributeSet attrs, int defStyleAttr) {
