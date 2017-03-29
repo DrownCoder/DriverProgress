@@ -1,6 +1,7 @@
 仪表盘进度条
 =========
------已通过JitPack发布
+-----已通过JitPack发布  
+博客：http://blog.csdn.net/sdfdzx/article/details/67639926
 可以自定义的属性：  
 1.仪表盘半径  
 2.仪表盘宽度  
