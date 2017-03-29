@@ -1,40 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#FAFAFA"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
     <com.xuan.driverprogress.view.DriverProgress
-        android:layout_centerInParent="true"
         android:id="@+id/myview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        custom:indicator_radius="10dp"
+        custom:panel_density="10"
+        custom:panel_max="100"
+        custom:panel_point_radius="3dp"
+        custom:panel_progress="50"
         custom:panel_radius="75dp"
         custom:panel_width="45dp"
-        custom:panel_progress="45"
-        custom:panel_max="100"
-        custom:indicator_radius="10dp"
-        custom:panel_point_radius="3dp"
-        custom:panel_density="10"
+        custom:touchable="true"
         />
+
     <Button
-        android:id="@+id/button"
-        android:text="开始动画"
-        android:background="@color/panel_progress_blue"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="80dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/button_start"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:background="@color/panel_progress_blue"
+        android:text="开始动画" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="进度"
+        android:textColor="@color/black_1"
+        android:textSize="18sp" />
+
     <SeekBar
-        android:layout_alignParentBottom="true"
+        android:id="@+id/seekbar_progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:id="@+id/seekbar"
-        android:layout_marginBottom="50dp"
-        />
-</RelativeLayout>
+        android:max="100" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="仪表盘宽度"
+        android:textColor="@color/black_1"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/seekbar_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="60" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:text="半径"
+        android:textColor="@color/black_1"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/seekbar_radius"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="指针宽度"
+            android:textColor="@color/black_1"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="精度"
+            android:textColor="@color/black_1"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/seekbar_index"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="15" />
+
+        <SeekBar
+            android:id="@+id/seekbar_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="20" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -8,5 +8,6 @@
         <attr name="panel_progress" format="integer" />
         <attr name="panel_max" format="integer"/>
         <attr name="indicator_radius" format="dimension"/>
+        <attr name="touchable" format="boolean" />
     </declare-styleable>
 </resources>
