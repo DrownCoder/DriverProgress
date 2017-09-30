@@ -11,7 +11,7 @@
 6.进度动画（可选择）
 
 #### 实现效果
-![这里写图片描述](http://img.blog.csdn.net/20170328180428462?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2RmZHp4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)  
+![实现效果](http://upload-images.jianshu.io/upload_images/7866586-3b1cad62935d8052.gif?imageMogr2/auto-orient/strip)
 
 # How to：
 **Step 1. Add the JitPack repository to your build file** 
