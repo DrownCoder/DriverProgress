@@ -14,6 +14,20 @@
 ![实现效果](http://upload-images.jianshu.io/upload_images/7866586-3b1cad62935d8052.gif?imageMogr2/auto-orient/strip)
 
 # How to：
+```
+<com.xuan.driverprogress.view.DriverProgress
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:indicator_radius="10dp"
+        custom:panel_density="10"
+        custom:panel_max="100"
+        custom:panel_point_radius="3dp"
+        custom:panel_progress="50"
+        custom:panel_radius="75dp"
+        custom:panel_width="45dp"
+        custom:touchable="true"
+        />
+```
 **Step 1. Add the JitPack repository to your build file** 
 Add it in your root build.gradle at the end of repositories:
 
